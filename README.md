@@ -1,19 +1,30 @@
-# Calories Prediction using Deep Learning (TensorFlow/Keras)
+# Calories Prediction using Deep Learning 🏃‍♂️🔥
 
-This project uses a Deep Learning approach to predict calories burned during exercise. The model is built using TensorFlow/Keras and scikit-learn, featuring exploratory data analysis (EDA), outlier removal using IQR, feature selection, and comprehensive model evaluation.
+This project uses a Deep Learning approach to predict the number of calories burned during exercise. Built with TensorFlow/Keras and scikit-learn, the model features robust data preprocessing, automated feature selection, and comprehensive performance evaluation. 
 
-## Environment Setup
+This repository is highly optimized for running on **WSL (Windows Subsystem for Linux)** with **NVIDIA GPU acceleration** (e.g., RTX 40XX).
 
-This project is optimized to run on **WSL (Windows Subsystem for Linux)** using **Fedora 43** and utilizes an NVIDIA GPU (e.g., RTX 4050) for accelerated training.
+## 🌟 Key Features
+- **Data Preprocessing:** Handles dummy encoding for categorical variables and removes outliers using the Interquartile Range (IQR) method.
+- **Feature Selection:** Implements `SequentialFeatureSelector` alongside an `MLPRegressor` to determine the most impactful features dynamically.
+- **Deep Learning Model:** A Multi-Layer Perceptron (MLP) built with the Keras 3 `Sequential` API.
+- **Visualizations:** Generates a Correlation Heatmap, Training/Validation Loss & MAE curves, Actual vs. Predicted scatter plots, and a smooth Residual plot.
 
-### Prerequisites
-1. **Windows Host:** Ensure your NVIDIA GPU drivers on Windows are up to date. You **do not** need to install NVIDIA drivers inside WSL.
-2. **WSL2:** Make sure you are running Fedora 43 under WSL2.
-3. **Python 3.10+** installed on your Fedora WSL environment.
+---
 
-### Installation Steps
+## 🛠️ Prerequisites
 
-1. **Update Fedora packages:**
-   ```bash
-   sudo dnf update -y
-   sudo dnf install python3 python3-pip python3-devel gcc git -y
+Before you begin, ensure you have the following setup:
+1. **Windows Host:** Up-to-date NVIDIA GPU drivers installed on Windows.
+2. **WSL2 Environment:** Fedora Linux (or similar distributions) running under WSL2.
+3. **Python:** Python **3.11** is strictly recommended for the best compatibility with TensorFlow and CUDA.
+
+---
+
+## 🚀 Installation & Setup
+
+### 1. System Preparation (Fedora WSL)
+Ensure you have Python 3.11 installed on your system:
+```bash
+sudo dnf update -y
+sudo dnf install python3.11 python3.11-devel gcc git -y

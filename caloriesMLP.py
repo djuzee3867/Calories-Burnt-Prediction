@@ -13,8 +13,8 @@ from sklearn.feature_selection import SequentialFeatureSelector
 from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import Dense
 
-# 1. Load and Preprocess Data
-dataset = pd.read_csv('calories.csv') # Changed path from Colab to local
+# Load and Preprocess Data
+dataset = pd.read_csv('calories.csv')
 dataset = dataset.drop(columns=['User_ID'])
 dataset = pd.get_dummies(dataset, columns=['Gender'], drop_first=True)
 
@@ -48,7 +48,7 @@ scaler = StandardScaler()
 x_train_scaled = scaler.fit_transform(x_train)
 x_test_scaled = scaler.transform(x_test)
 
-# 2. Feature Selection using MLPRegressor
+# Feature Selection using MLPRegressor
 mlp_model = MLPRegressor(hidden_layer_sizes=(64, 32), max_iter=500, random_state=42)
 
 sfs = SequentialFeatureSelector(estimator=mlp_model,
@@ -65,12 +65,9 @@ selected_features_mlp = x.columns[sfs.get_support()]
 print("Selected Features from MLP Sequential Selection:")
 print(selected_features_mlp.tolist())
 
-# Note: The neural network below currently trains on ALL features (x_train_scaled).
-# If you want to train ONLY on selected features, use x_train_mlp_selected instead.
 x_train_mlp_selected = pd.DataFrame(x_train_scaled, columns=x.columns)[selected_features_mlp]
 
-# 3. Build and Train Deep Learning Model
-print("กำลังสร้างและเทรนโมเดล...")
+# Build and Train Deep Learning Model
 model = Sequential([
     Dense(128, activation='relu', input_shape=(x_train_scaled.shape[1],)),
     Dense(64, activation='relu'),
@@ -88,14 +85,14 @@ model.compile(
 
 history = model.fit(
     x_train_scaled, y_train,
-    validation_split=0.2, # แบ่ง 20% ของ Train มาเช็คผลระหว่างเทรน
+    validation_split=0.2, 
     epochs=100,
     batch_size=32,
     verbose=1
 )
 print("เทรนเสร็จสมบูรณ์!")
 
-# 4. Evaluate Model
+# Evaluate Model
 y_pred = model.predict(x_test_scaled).flatten()
 
 mae = mean_absolute_error(y_test, y_pred)
@@ -108,7 +105,7 @@ print(f"RMSE: {rmse:.4f}")
 print(f"MAE: {mae:.4f}")
 print(f"R²: {r2:.4f}")
 
-# 5. Visualizations
+# Visualizations
 def plot_history(hist):
     mae_history = hist.history['mae']
     val_mae_history = hist.history['val_mae']
@@ -118,14 +115,14 @@ def plot_history(hist):
 
     plt.figure(figsize=(12, 6))
 
-    # กราฟ MAE
+    # MAE
     plt.subplot(1, 2, 1)
     plt.plot(epochs_range, mae_history, label='Training MAE')
     plt.plot(epochs_range, val_mae_history, label='Validation MAE')
     plt.legend(loc='upper right')
     plt.title('Training and Validation MAE')
 
-    # กราฟ Loss
+    # Loss
     plt.subplot(1, 2, 2)
     plt.plot(epochs_range, loss_history, label='Training Loss')
     plt.plot(epochs_range, val_loss_history, label='Validation Loss')

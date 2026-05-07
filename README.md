@@ -1,30 +1,39 @@
-# Calories Prediction using Deep Learning 🏃‍♂️🔥
+# Calories Prediction using Deep Learning
 
-This project uses a Deep Learning approach to predict the number of calories burned during exercise. Built with TensorFlow/Keras and scikit-learn, the model features robust data preprocessing, automated feature selection, and comprehensive performance evaluation. 
+A Deep Learning model built with TensorFlow and Keras to predict calories burned during physical activities. This project is optimized for execution on **Windows Subsystem for Linux (WSL)** with **NVIDIA GPU acceleration**.
 
-This repository is highly optimized for running on **WSL (Windows Subsystem for Linux)** with **NVIDIA GPU acceleration** (e.g., RTX 40XX).
+## Features
+- **Data Pipeline:** Categorical encoding and outlier removal using the Interquartile Range (IQR).
+- **Feature Selection:** Automated selection utilizing `SequentialFeatureSelector` and `MLPRegressor`.
+- **Model Architecture:** Multi-Layer Perceptron (MLP) via Keras 3.
+- **Evaluation:** Comprehensive metrics (MSE, RMSE, MAE, R²) and visualization (Actual vs. Predicted, Residual plots).
 
-## 🌟 Key Features
-- **Data Preprocessing:** Handles dummy encoding for categorical variables and removes outliers using the Interquartile Range (IQR) method.
-- **Feature Selection:** Implements `SequentialFeatureSelector` alongside an `MLPRegressor` to determine the most impactful features dynamically.
-- **Deep Learning Model:** A Multi-Layer Perceptron (MLP) built with the Keras 3 `Sequential` API.
-- **Visualizations:** Generates a Correlation Heatmap, Training/Validation Loss & MAE curves, Actual vs. Predicted scatter plots, and a smooth Residual plot.
+## Prerequisites
+- **OS:** WSL2 (Fedora/Ubuntu) on Windows Or Fedora 43.
+- **Hardware:** NVIDIA GPU with up-to-date Windows host drivers.
+- **Software:** Python 3.11.
 
----
+## Setup & Installation
 
-## 🛠️ Prerequisites
-
-Before you begin, ensure you have the following setup:
-1. **Windows Host:** Up-to-date NVIDIA GPU drivers installed on Windows.
-2. **WSL2 Environment:** Fedora Linux (or similar distributions) running under WSL2.
-3. **Python:** Python **3.11** is strictly recommended for the best compatibility with TensorFlow and CUDA.
-
----
-
-## 🚀 Installation & Setup
-
-### 1. System Preparation (Fedora WSL)
-Ensure you have Python 3.11 installed on your system:
+**1. Clone the repository and setup the environment:**
 ```bash
-sudo dnf update -y
-sudo dnf install python3.11 python3.11-devel gcc git -y
+git clone [https://github.com/djuzee3867/Calories-Burnt-Prediction.git]
+cd YOUR_REPO_NAME
+
+python3.11 -m venv venv
+source venv/bin/activate
+pip install --upgrade pip
+pip install -r requirements.txt
+```
+- ** View on [djuzeeKaggle](https://www.kaggle.com/code/djuzee/calories-burnt-prediction-mlp-regression)
+## Download the Dataset:
+- **Download** the calories.csv dataset from [Kaggle](https://www.kaggle.com/datasets/ruchikakumbhar/calories-burnt-prediction) and place it in the project's root directory.
+
+## Usage
+- **Run** the main pipeline to train the model and generate evaluations
+```
+python main.py
+```
+
+## License
+MIT License

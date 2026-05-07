@@ -33,7 +33,7 @@ python main.py
 ```
 
 
-- ** View on [djuzeeKaggle](https://www.kaggle.com/code/djuzee/calories-burnt-prediction-mlp-regression)
+- **View on [djuzeeKaggle](https://www.kaggle.com/code/djuzee/calories-burnt-prediction-mlp-regression)**
 
 ## License
-MIT License
+[MIT License](https://en.wikipedia.org/wiki/MIT_License)

@@ -14,8 +14,8 @@ A Deep Learning model built with TensorFlow and Keras to predict calories burned
 - **Software:** Python 3.11.
 
 ## Setup & Installation
-
-**1. Clone the repository and setup the environment:**
+**Download** the calories.csv dataset from [Kaggle](https://www.kaggle.com/datasets/ruchikakumbhar/calories-burnt-prediction) and place it in the project's root directory.
+**Clone the repository and setup the environment:**
 ```bash
 git clone [https://github.com/djuzee3867/Calories-Burnt-Prediction.git]
 cd YOUR_REPO_NAME
@@ -25,15 +25,14 @@ source venv/bin/activate
 pip install --upgrade pip
 pip install -r requirements.txt
 ```
-- ** View on [djuzeeKaggle](https://www.kaggle.com/code/djuzee/calories-burnt-prediction-mlp-regression)
-## Download the Dataset:
-- **Download** the calories.csv dataset from [Kaggle](https://www.kaggle.com/datasets/ruchikakumbhar/calories-burnt-prediction) and place it in the project's root directory.
-
 ## Usage
 - **Run** the main pipeline to train the model and generate evaluations
 ```
 python main.py
 ```
+
+
+- ** View on [djuzeeKaggle](https://www.kaggle.com/code/djuzee/calories-burnt-prediction-mlp-regression)
 
 ## License
 MIT License

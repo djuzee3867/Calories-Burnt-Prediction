@@ -9,7 +9,7 @@ A Deep Learning model built with TensorFlow and Keras to predict calories burned
 - **Evaluation:** Comprehensive metrics (MSE, RMSE, MAE, R²) and visualization (Actual vs. Predicted, Residual plots).
 
 ## Prerequisites
-- **OS:** WSL2 (Fedora/Ubuntu) on Windows Or Fedora 43.
+- **OS:** WSL2 Fedora/Ubuntu Or Fedora Linux.
 - **Hardware:** NVIDIA GPU with up-to-date Windows host drivers.
 - **Software:** Python 3.11.
 

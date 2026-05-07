@@ -4,3 +4,5 @@ scikit-learn
 matplotlib
 seaborn
 tensorflow[and-cuda]
+catboost
+xgboost

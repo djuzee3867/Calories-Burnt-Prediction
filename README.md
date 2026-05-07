@@ -18,7 +18,7 @@ A Deep Learning model built with TensorFlow and Keras to predict calories burned
 
 **Clone the repository and setup the environment:**
 ```bash
-git clone [https://github.com/djuzee3867/Calories-Burnt-Prediction.git]](https://github.com/djuzee3867/Calories-Burnt-Prediction)
+git clone https://github.com/djuzee3867/Calories-Burnt-Prediction
 cd YOUR_REPO_NAME
 
 python3.11 -m venv venv

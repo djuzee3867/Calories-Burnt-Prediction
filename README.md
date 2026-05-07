@@ -1,4 +1,4 @@
-#This project is part of a research project MJU CSTI2026
+# This project is part of a research project MJU CSTI2026
 
 # Calories Prediction using Deep Learning
 

@@ -1,6 +1,6 @@
 # This project is part of a research project MJU CSTI2026
 
-# Calories Prediction using Deep Learning
+# Calories Prediction using Deep Learning and Machine Learning
 
 A Deep Learning model built with TensorFlow and Keras to predict calories burned during physical activities. This project is optimized for execution on **Windows Subsystem for Linux (WSL)** with **NVIDIA GPU acceleration**.
 
